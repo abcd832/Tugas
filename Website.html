@@ -1,0 +1,240 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gambar di Dalam Div</title>
+    <style>
+        /* Gaya Dasar Halaman */
+        body {
+            background-color: #f0f4f8;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #11c3b4;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        li {
+            float: left;
+        }
+
+        li a, .dropbtn {
+            display: inline-block;
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+        }
+
+        li a:hover, .dropdown:hover .dropbtn {
+            background-color: #004d40;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1001;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .form-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: 30px 0;
+            padding: 20px;
+        }
+
+        .div-container {
+            position: relative;
+            width: 300px;
+            padding: 20px;
+            border-radius: 15px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .div-container:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .div-container img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin-bottom: 10px;
+        }
+
+        .div-content {
+            font-size: 16px;
+            line-height: 1.5;
+            color: #333;
+        }
+
+        .div-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+        }
+
+        button {
+            background-color: #00796b;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 8px 15px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #004d40;
+        }
+
+        .hidden {
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+        }
+
+        .visible {
+            opacity: 1;
+            visibility: visible;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+        }
+    </style>
+</head>
+<body>
+    <header style="text-align: center; background-color: aqua; color: #e29613;font-size: 50px;">Bangun Ruang dan Bangun Datar</header>
+<div class="navbar">
+    <ul>
+        <li class="dropdown">
+            <a href="#" class="dropbtn">More</a>
+            <div class="dropdown-content">
+                <a href="Limas.html">Limas</a>
+                <a href="Bola.html">Bola</a>
+            </div>
+        </li>
+        <li class="dropdown">
+            <a href="#" class="dropbtn">Other</a>
+            <div class="dropdown-content">
+                <a href="Segitiga.html">Segitiga</a>
+                <a href="Trapesium.html">Trapesium</a>
+            </div>
+        </li>
+    </ul>
+</div>
+
+<div class="form-container">
+    <!-- Div 1 -->
+    <div class="div-container">
+        <img src="https://blue.kumparan.com/image/upload/fl_progressive,fl_lossy,c_fill,q_auto:best,w_1024/v1634025439/01hb3peraq2kqt5gmbxmv6th6b.jpg" alt="Kubus" class="visible">
+        <div class="div-content visible"><p>Kubus adalah bangun ruang tiga dimensi yang memiliki enam sisi, semuanya berbentuk persegi. 
+            Volume kubus dapat dihitung dengan rumus V = s³, di mana s adalah panjang sisi kubus. Kubus memiliki 12 rusuk dan 8 titik sudut. 
+            Dalam kehidupan sehari-hari, contoh kubus bisa dilihat pada dadu dan kotak penyimpanan.</p></div>
+        <div class="div-buttons">
+            <button class="text-button">Teks On/Off</button>
+            <button class="image-button">Gambar On/Off</button>
+        </div>
+    </div>
+
+    <!-- Div 2 -->
+    <div class="div-container">
+        <img src="https://blog-static.mamikos.com/wp-content/uploads/2024/04/Contoh-Soal-Volume-Balok.jpg" alt="Balok" class="visible">
+        <div class="div-content visible"><p>Balok adalah bangun ruang tiga dimensi yang memiliki 6 sisi, dengan setiap pasang sisi yang berhadapan adalah persegi panjang. 
+                Volume balok dapat dihitung dengan rumus V = p × l × t, di mana p adalah panjang, l adalah lebar, dan t adalah tinggi. 
+                Balok sering digunakan dalam konstruksi bangunan dan berbagai benda seperti kotak penyimpanan.</p></div>
+        <div class="div-buttons">
+            <button class="text-button">Teks On/Off</button>
+            <button class="image-button">Gambar On/Off</button>
+        </div>
+    </div>
+
+    <!-- Div 3 -->
+    <div class="div-container">
+        <img src="https://png.pngtree.com/png-clipart/20230817/original/pngtree-triangular-prisms-collection-prism-geometric-picture-image_7996458.png" alt="Prisma Segitiga" class="visible">
+        <div class="div-content visible"><p>Prisma Segitiga adalah bangun ruang yang memiliki dua alas berbentuk segitiga dan tiga sisi berbentuk persegi panjang. 
+            Volume prisma segitiga dapat dihitung dengan rumus V = A × t, di mana A adalah luas alas segitiga dan t adalah tinggi prisma. 
+            Contoh prisma segitiga dapat ditemukan pada bentuk bangunan atap dan struktur arsitektur lainnya.</p> </div>
+        <div class="div-buttons">
+            <button class="text-button">Teks On/Off</button>
+            <button class="image-button">Gambar On/Off</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Fungsi untuk menyembunyikan/memunculkan elemen
+    function toggleElement(element) {
+        element.classList.toggle('hidden');
+        element.classList.toggle('visible');
+    }
+
+    // Menambahkan event listener ke tombol teks dan gambar
+    document.querySelectorAll('.text-button').forEach(button => {
+        button.addEventListener('click', function () {
+            const textContent = this.parentElement.parentElement.querySelector('.div-content');
+            toggleElement(textContent);
+        });
+    });
+
+    document.querySelectorAll('.image-button').forEach(button => {
+        button.addEventListener('click', function () {
+            const img = this.parentElement.parentElement.querySelector('img');
+            toggleElement(img);
+        });
+    });
+
+    // Menambahkan efek hover dan klik pada div-container
+    document.querySelectorAll('.div-container').forEach(container => {
+        // Efek hover
+        container.addEventListener('mouseover', function () {
+            this.style.backgroundColor = '#e0f7fa';
+            this.style.transform = 'rotate(2deg)';
+        });
+
+        container.addEventListener('mouseout', function () {
+            this.style.backgroundColor = '#ffffff';
+            this.style.transform = 'rotate(0deg)';
+        });
+
+        // Efek klik
+        container.addEventListener('click', function () {
+            this.style.boxShadow = '0 10px 20px rgba(0, 0, 0, 0.3)';
+            this.style.border = '2px solid #00796b';
+            setTimeout(() => {
+                this.style.boxShadow = '0 4px 10px rgba(0, 0, 0, 0.15)';
+                this.style.border = 'none';
+            }, 300);
+        });
+    });
+</script>
+</body>
+</html>

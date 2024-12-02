@@ -1,0 +1,153 @@
+<!DOCTYPE html>  
+<html lang="en"> 
+<head>
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>Trapesium</title> 
+    <style>
+        body {  /* Gaya untuk elemen body */
+            font-family: 'Poppins', sans-serif;  /* Mengatur font untuk seluruh halaman */
+            margin: 0;  /* Menghilangkan margin default */
+            padding: 0;  /* Menghilangkan padding default */
+            background-color: #e3f2fd;  /* Mengatur warna latar belakang */
+            color: #333;  /* Mengatur warna teks */
+        }
+
+        .container {  /* Gaya untuk kontainer utama */
+            max-width: 1200px;  /* Membatasi lebar maksimum kontainer */
+            margin: 0 auto;  /* Mengatur margin otomatis untuk memusatkan kontainer */
+            padding: 50px 20px;  /* Memberikan padding atas-bawah dan kiri-kanan */
+            text-align: center;  /* Mengatur teks menjadi rata tengah */
+        }
+
+        h1 {  /* Gaya untuk judul utama */
+            color: #1e88e5;  /* Mengatur warna teks judul */
+            font-size: 3.5em;  /* Mengatur ukuran font judul */
+            margin-bottom: 20px;  /* Memberikan jarak bawah */
+            letter-spacing: 1px;  /* Mengatur jarak antar huruf */
+        }
+
+        p {  /* Gaya untuk paragraf */
+            font-size: 1.1em;  /* Mengatur ukuran font paragraf */
+            line-height: 1.8;  /* Mengatur jarak antar baris */
+            color: #444;  /* Mengatur warna teks paragraf */
+            margin-bottom: 30px;  /* Memberikan jarak bawah */
+            max-width: 900px;  /* Membatasi lebar maksimum paragraf */
+            margin-left: auto;  /* Margin kiri otomatis untuk memusatkan */
+            margin-right: auto;  /* Margin kanan otomatis untuk memusatkan */
+        }
+
+        .image-container {  /* Gaya untuk wadah gambar */
+            display: flex;  /* Menggunakan flexbox untuk tata letak */
+            justify-content: center;  /* Memusatkan konten secara horizontal */
+            align-items: center;  /* Memusatkan konten secara vertikal */
+            margin-bottom: 30px;  /* Memberikan jarak bawah */
+        }
+
+        .image-container img {  /* Gaya untuk gambar dalam wadah gambar */
+            width: 350px;  /* Mengatur lebar gambar */
+            height: auto;  /* Mengatur tinggi gambar secara otomatis untuk menjaga rasio */
+            transition: transform 0.3s ease;  /* Menambahkan efek transisi saat hover */
+            border-radius: 15px;  /* Membuat sudut gambar melengkung */
+        }
+
+        .image-container img:hover {  /* Gaya untuk gambar saat hover */
+            transform: scale(1.05);  /* Memperbesar gambar sedikit saat dihover */
+        }
+
+        .info-box {  /* Gaya untuk kotak informasi */
+            background-color: #ffffff;  /* Mengatur warna latar belakang kotak informasi */
+            border-radius: 15px;  /* Membuat sudut kotak melengkung */
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);  /* Menambahkan bayangan pada kotak */
+            padding: 40px;  /* Memberikan padding di dalam kotak */
+            max-width: 1000px;  /* Membatasi lebar maksimum kotak */
+            margin: 0 auto;  /* Memusatkan kotak */
+            margin-bottom: 40px;  /* Memberikan jarak bawah */
+            text-align: left;  /* Mengatur teks dalam kotak menjadi rata kiri */
+        }
+
+        .info-box h2 {  /* Gaya untuk judul dalam kotak informasi */
+            color: #1976d2;  /* Mengatur warna teks judul dalam kotak */
+            margin-bottom: 20px;  /* Memberikan jarak bawah */
+            font-size: 2.2em;  /* Mengatur ukuran font judul dalam kotak */
+        }
+
+        .info-box ul {  /* Gaya untuk daftar dalam kotak informasi */
+            list-style-type: none;  /* Menghilangkan bullet pada daftar */
+            padding: 0;  /* Menghilangkan padding pada daftar */
+        }
+
+        .info-box ul li {  /* Gaya untuk setiap item dalam daftar */
+            background-color: #bbdefb;  /* Mengatur warna latar belakang item daftar */
+            padding: 15px;  /* Memberikan padding pada item daftar */
+            margin-bottom: 10px;  /* Memberikan jarak bawah antar item */
+            border-radius: 10px;  /* Membuat sudut item daftar melengkung */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);  /* Menambahkan bayangan pada item daftar */
+            color: #0d47a1;  /* Mengatur warna teks item daftar */
+            font-size: 1.2em;  /* Mengatur ukuran font item daftar */
+            font-weight: bold;  /* Mengatur font item daftar menjadi tebal */
+            display: flex;  /* Menggunakan flexbox untuk tata letak item daftar */
+            align-items: center;  /* Memusatkan item daftar secara vertikal */
+        }
+
+        .info-box ul li:before {  /* Menambahkan simbol sebelum item daftar */
+            content: '🔷';  /* Menentukan simbol yang ditampilkan */
+            margin-right: 10px;  /* Memberikan jarak kanan pada simbol */
+        }
+
+        .btn-back {  /* Gaya untuk tombol kembali */
+            display: inline-block;  /* Menampilkan tombol sebagai blok inline */
+            padding: 12px 25px;  /* Memberikan padding pada tombol */
+            background-color: #1e88e5;  /* Mengatur warna latar belakang tombol */
+            color: white;  /* Mengatur warna teks tombol */
+            text-decoration: none;  /* Menghilangkan garis bawah pada teks tombol */
+            border-radius: 30px;  /* Membuat sudut tombol melengkung */
+            font-size: 1.2em;  /* Mengatur ukuran font tombol */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);  /* Menambahkan bayangan pada tombol */
+            transition: background-color 0.3s ease;  /* Menambahkan efek transisi saat hover */
+        }
+
+        .btn-back:hover {  /* Gaya untuk tombol saat hover */
+            background-color: #0d47a1;  /* Mengubah warna latar belakang tombol saat dihover */
+        }
+
+        footer {  /* Gaya untuk footer */
+            margin-top: 40px;  /* Memberikan jarak atas pada footer */
+            color: #1976d2;  /* Mengatur warna teks footer */
+            font-size: 0.9em;  /* Mengatur ukuran font footer */
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">  <!-- Kontainer utama untuk konten halaman -->
+    <h1>Trapesium</h1>  <!-- Judul utama halaman -->
+
+    <div class="image-container">  <!-- Wadah untuk gambar trapesium -->
+        <!-- Tambahkan gambar trapesium di sini -->
+    </div>
+
+    <p>Trapesium adalah bangun datar yang memiliki dua sisi sejajar. Sisi yang sejajar disebut alas, sedangkan sisi lainnya disebut samping. Trapesium memiliki berbagai jenis, seperti trapesium sama kaki dan trapesium sembarang.</p>  <!-- Paragraf menjelaskan apa itu trapesium -->
+
+    <div class="info-box">  <!-- Kotak informasi untuk fakta tentang trapesium -->
+        <h2>Fakta Menarik tentang Trapesium</h2>  <!-- Judul dalam kotak informasi -->
+        <ul>  <!-- Daftar fakta tentang trapesium -->
+            <li><strong>Sisi:</strong> Terdiri dari 4 sisi.</li>  <!-- Item fakta tentang sisi trapesium -->
+            <li><strong>Sudut:</strong> Jumlah sudut dalam trapesium adalah 360 derajat.</li>  <!-- Item fakta tentang sudut trapesium -->
+            <li><strong>Rumus Luas:</strong> L = 1/2 × (a + b) × tinggi, di mana a dan b adalah panjang alas.</li>  <!-- Item fakta tentang rumus luas trapesium -->
+            <li><strong>Contoh:</strong> Trapesium sama kaki, trapesium siku-siku.</li>  <!-- Item contoh jenis trapesium -->
+            <li><strong>Karakteristik:</strong> Memiliki dua sudut yang berlawanan sama.</li>  <!-- Item fakta tentang karakteristik trapesium -->
+        </ul>
+    </div>
+
+    <p>  <!-- Paragraf pemisah sebelum tombol kembali -->
+        <a class="btn-back" href="Website.html">Kembali ke Menu Utama</a>  <!-- Tombol untuk kembali ke halaman utama -->
+    </p>
+</div>
+
+<footer>  <!-- Footer halaman -->
+    © 2024 Geometri Bangun Ruang  <!-- Teks hak cipta -->
+</footer>
+
+</body>
+</html>
